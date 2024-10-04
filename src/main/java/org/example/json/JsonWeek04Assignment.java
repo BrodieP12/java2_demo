@@ -6,7 +6,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -494,7 +493,7 @@ public class JsonWeek04Assignment {
             if(playersStaying.size() == 0){
                 System.out.println("Thanks for playing!");
             }
-            userInterface.printSeperator(100);
+
             for(Player player : playersStaying){
                 userInterface.displayOptions(player.getUsername() + " would you like to play again?", yesNo);
                 int option = userInterface.getValidIntegerInputInRange(1, yesNo.length);
@@ -525,6 +524,7 @@ public class JsonWeek04Assignment {
         }
         public void ResetPlayer(Player player){
             player.clearHand();
+            player.setBusted(false);
         }
         public void ResetDealer(){
             dealer.clearHand();
